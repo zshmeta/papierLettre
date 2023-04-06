@@ -1,0 +1,76 @@
+@import url('https://fonts.cdnfonts.com/css/handwriting');
+
+
+html {
+    display: flex;
+    justify-content: center;
+    margin-top: 130px;
+    background-color: #323232
+
+}
+
+.paper {
+    position: relative;
+    box-shadow: border-box;
+    width: 800px;
+    height: 600px;
+    background-color: #ffffff   ;
+    background-image: linear-gradient(#ffffff 1.1em, #cccc 1.2em);
+    background-size: 100% 1.2em;
+    border-radius: 10px;
+    cursor: move;
+
+}
+
+
+
+.paper::before,
+.paper::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 10px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.paper::after {
+    right: 15px;
+    transform:skew(5deg) rotate(5deg);
+}
+
+
+.paper::before {
+    left: 15px;
+    transform:skew(-5deg) rotate(-5deg);
+}
+
+.paper:hover::before,
+.paper:hover::after {
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.9);
+}
+
+
+.signature {
+    position: absolute;
+    font-weight: 900;
+    left: 50%;
+    z-index: 1;
+    top: 700px;
+    display: flex;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    font-family: 'Handwriting', cursive;
+    font-size: 59px;
+    color: black;
+    text-shadow: 0 0 10px black;
+    text-align: right;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    word-spacing: 0.2em;
+    white-space: nowrap;
+    padding: 0 0.5em;
+    z-index: 1;
+}
